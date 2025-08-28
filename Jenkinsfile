@@ -2,14 +2,10 @@ pipeline {
   agent any
   tools { maven 'maven-3911' }
   stages {
-    // stage('Checkout') {
-    //   steps {
-    //     checkout scm
-    //   }
-    // }
     stage('Build & Test') {
       steps {
-        sh 'mvn -B clean verify'
+        mvn clean install -U
+        //sh 'mvn -B clean verify'
       }
     }
     stage('Package') {
