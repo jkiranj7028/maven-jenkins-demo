@@ -2,7 +2,8 @@ pipeline {
   agent any
   tools { 
     maven 'maven-3911' 
-    jdk 'jdk-17'}
+    jdk 'jdk-17'
+  }
   stages {
     stage('Build & Test') {
       steps {
