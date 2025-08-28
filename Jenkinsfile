@@ -7,8 +7,8 @@ pipeline {
   stages {
     stage('Build & Test') {
       steps {
-        //sh 'mvn clean install -U'
-        sh 'mvn -B clean verify'
+        sh 'mvn clean install -U'
+        //sh 'mvn -B clean verify'
       }
     }
     stage('Package') {
