@@ -1,11 +1,13 @@
 pipeline {
   agent any
-  tools { maven 'maven-3911' }
+  tools { 
+    maven 'maven-3911' 
+    jdk 'jdk-17'}
   stages {
     stage('Build & Test') {
       steps {
-        sh 'mvn clean install -U'
-        //sh 'mvn -B clean verify'
+        //sh 'mvn clean install -U'
+        sh 'mvn -B clean verify'
       }
     }
     stage('Package') {
